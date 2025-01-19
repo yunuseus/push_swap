@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:58:31 by yalp              #+#    #+#             */
-/*   Updated: 2025/01/19 17:31:02 by yalp             ###   ########.fr       */
+/*   Updated: 2025/01/19 17:36:44 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 int main(int argc, char ** argv)
 {
-	t_list **a;
+	t_list *a;
 	int i = 1;
 	while (i < argc -1)
 	{
-		ft_lstadd_back(a,ft_lstnew(argv[i]));
+		ft_lstadd_back(&a, ft_lstnew(argv[i]));
 		i++;
 	}
 	rra(a,argc -1);
