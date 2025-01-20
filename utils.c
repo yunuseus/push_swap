@@ -37,7 +37,7 @@ int	ft_atoi(const char *str)
 	return (k * j);
 }
 
-int ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -45,5 +45,38 @@ int ft_lstlast(t_list *lst)
 	{
 		lst = lst -> next;
 	}
-	return (lst->content);
+	return (lst);
+}
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*tmp;
+
+	if (!new)
+		return ;
+	if (!*lst)
+	{
+		*lst = new;
+		return ;
+	}
+	tmp = ft_lstlast(*lst);
+	tmp -> next = new;
+}
+t_list	*ft_lstnew(int content)
+{
+	t_list	*new;
+
+	new = malloc(sizeof(t_list));
+	if (!new)
+		return (NULL);
+	new -> content = content;
+	new -> next = NULL;
+	return (new);
+}
+void	ft_lstadd_front(t_list **lst, t_list *new)
+{
+	if (lst && new)
+	{
+		new -> next = *lst;
+		*lst = new;
+	}
 }

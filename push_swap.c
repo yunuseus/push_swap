@@ -15,17 +15,22 @@
 int main(int argc, char ** argv)
 {
 	t_list *a;
-	int i = 1;
-	while (i < argc -1)
+	int i = 2;
+	a = ft_lstnew(ft_atoi(argv[1]));
+	while (i < argc)
 	{
-		ft_lstadd_back(&a, ft_lstnew(argv[i]));
+		ft_lstadd_back(&a,ft_lstnew(ft_atoi(argv[i])));
 		i++;
 	}
-	rra(a,argc -1);
-	printf("%d", a[0]);
-	printf("%d", a[1]);
-	printf("%d", a[2]);
-	printf("%d", a[3]);
-	printf("%d", a[4]);
-	printf("%d", a[5]);
+	rra(&a);
+	while (a != NULL)
+	{
+		printf("%d", a->content);
+		a = a->next;
+	}
+	
+
+	
+
+	
 }
