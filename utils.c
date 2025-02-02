@@ -6,11 +6,39 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:59:46 by yalp              #+#    #+#             */
-/*   Updated: 2025/01/19 17:15:49 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/02 20:09:39 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	ft_lstsize(t_list *lst)
+{
+	int	i;
+	t_list	*tmp;
+	tmp = lst;
+	i = 0;
+	while (lst != NULL)
+	{
+		i++;
+		lst = lst -> next;
+	}
+	lst = tmp;
+	return (i);
+}
+
+void	ft_lst_free(t_list *list)
+{
+	t_list	*tmp;
+
+	while (list != NULL)
+	{
+		tmp = list;
+		list = list->next;
+		free(tmp);
+	}
+
+}
 
 int	ft_atoi(const char *str)
 {
