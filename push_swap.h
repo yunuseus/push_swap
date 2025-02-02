@@ -10,7 +10,8 @@ typedef struct s_list
 int		ft_atoi(const char *str);
 void	ra(t_list **a);
 void	sa(t_list **a);
-void	rra(t_list **a);
+void	rr(t_list **a, t_list **b);
+void	rra(t_list **a, int b);
 t_list	*ft_lstlast(t_list *lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstnew(int content);

@@ -1,31 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   arg_checks.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/19 15:58:31 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/02 16:53:36 by yalp             ###   ########.fr       */
+/*   Created: 2025/02/02 16:16:57 by yalp              #+#    #+#             */
+/*   Updated: 2025/02/02 16:16:57 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int main(int argc, char ** argv)
-{
-	t_list *a;
-	int i = 2;
-	a = ft_lstnew(ft_atoi(argv[1]));
-	while (i < argc)
-	{
-		ft_lstadd_back(&a,ft_lstnew(ft_atoi(argv[i])));
-		i++;
-	}
-	rra(&a, 1);
-	while (a != NULL)
-	{
-		printf("%d", a->content);
-		a = a->next;
-	}
-}

@@ -6,63 +6,34 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 16:10:56 by yalp              #+#    #+#             */
-/*   Updated: 2025/01/19 17:17:44 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/02 16:54:07 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "printf/ft_printf.h"
 
-void	sa(t_list **a)
+void	rr(t_list **a, t_list **b)
 {
-	t_list	*tmp;
+	t_list	*tmp_a;
+	t_list	*head_a;
+	t_list	*tmp_b;
+	t_list	*head_b;
 
-	tmp = (*a)->next;
-	(*a)->next = tmp->next;
-	tmp->next = *a;
-	*a = tmp;
-}
-void	sb(t_list **b)
-{
-	t_list *tmp;
-
-	tmp = (*b)->next;
-	(*b)->next = tmp->next;
-	tmp->next = *b;
-	*b = tmp;
-}
-void	ss(t_list *a, t_list *b)
-{
-	sa(&a);
-	sb(&b);
-}
-void	ra(t_list **a)
-{
-	t_list	*tmp;
-	t_list	*head;
-	tmp = *a;
+	tmp_a = *a;
 	*a = (*a)->next;
-	head = *a;
-	tmp->next = NULL;
-	ft_lstadd_back(&head, tmp);
-}
-void	rb(t_list **b)
-{
-	t_list	*tmp;
-	t_list	*head;
-
-	tmp = *b;
+	head_a = *a;
+	tmp_a->next = NULL;
+	ft_lstadd_back(&head_a, tmp_a);
+	tmp_b = *b;
 	*b = (*b)->next;
-	head = *b;
-	tmp->next = NULL;
-	ft_lstadd_back(&head, tmp);
-}
-void	rr(t_list *a, t_list *b)
-{
-	ra(&a);
-	rb(&b);
+	head_b = *b;
+	tmp_b->next = NULL;
+	ft_lstadd_back(&head_b, tmp_b);
+	ft_printf("%s\n", "rr");
 }
 
-void	rra(t_list **a)
+void	rra(t_list **a, int b)
 {
 	t_list	*last;
 	t_list	*bflast;
@@ -78,8 +49,11 @@ void	rra(t_list **a)
 		bflast->next = NULL;
 	last->next = *a;
 	*a = last;
+	if (b == 1)
+		ft_printf("%s", "rra");
 }
-void	rrb(t_list **b)
+
+void	rrb(t_list **b, int c)
 {
 	t_list	*last;
 	t_list	*bflast;
@@ -95,12 +69,17 @@ void	rrb(t_list **b)
 		bflast->next = NULL;
 	last->next = *b;
 	*b = last;
+	if (c == 1)
+		ft_printf("%s", "rrb");
 }
+
 void	rrr(t_list *a, t_list *b)
 {
-	rra(&a);
-	rrb(&b);
+	rra(&a, 0);
+	rrb(&b, 0);
+	ft_printf("%s", "rrr");
 }
+
 void	pa(t_list **a, t_list **b)
 {
 	t_list	*tmp;
@@ -109,7 +88,9 @@ void	pa(t_list **a, t_list **b)
 	*b = (*b)->next;
 	tmp->next = *a;
 	*a = tmp;
+	ft_printf("%s", "pa");
 }
+
 void	pb(t_list **a, t_list **b)
 {
 	t_list	*tmp;
@@ -118,4 +99,5 @@ void	pb(t_list **a, t_list **b)
 	*a = (*a)->next;
 	tmp->next = *b;
 	*b = tmp;
+	ft_printf("%s", "pb");
 }

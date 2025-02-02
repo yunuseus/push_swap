@@ -1,31 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/19 15:58:31 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/02 16:53:36 by yalp             ###   ########.fr       */
+/*   Created: 2024/10/29 12:49:58 by yalp              #+#    #+#             */
+/*   Updated: 2025/02/02 13:59:00 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef FT_PRINTF_H
 
-int main(int argc, char ** argv)
-{
-	t_list *a;
-	int i = 2;
-	a = ft_lstnew(ft_atoi(argv[1]));
-	while (i < argc)
-	{
-		ft_lstadd_back(&a,ft_lstnew(ft_atoi(argv[i])));
-		i++;
-	}
-	rra(&a, 1);
-	while (a != NULL)
-	{
-		printf("%d", a->content);
-		a = a->next;
-	}
-}
+# define FT_PRINTF_H
+
+int	ft_prntchar(int c);
+int	ft_prntstr(char *str);
+int	ft_prntnbr(int nb);
+int	ft_prnthex(unsigned int n, char b);
+int	ft_prntunbr(unsigned int nb);
+int	ft_prntptr(unsigned long a, int c);
+int	ft_printf(const char *format, ...);
+
+#endif
