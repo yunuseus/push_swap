@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:58:31 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/07 17:25:14 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/07 17:26:54 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ t_list	*find_next_min(t_list **list)
 void	indexer(t_list **list) 
 {
 	int		i;
-	t_list 	**head;
+	t_list 	*head;
 	t_list *x;
 
 	x = *list;
@@ -103,7 +103,7 @@ void	indexer(t_list **list)
 	*list = x;
 
 	i = 0;
-	head = list;
+	head = *list;
 	while ((x = find_next_min(list)))
 		x->index = i++;
 	*list = head;
