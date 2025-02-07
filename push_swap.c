@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:58:31 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/07 15:22:37 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/07 17:13:11 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ void	fill_stack(t_list **a, char **argv, int argc)
 	i = 1;
 	*a = ft_lstnew(ft_atoi(argv[i]));
 	while  (++i < argc)
+	{
+		printf("%d\n", i);
 		ft_lstadd_back(a, ft_lstnew(ft_atoi(argv[i])));
+	}
 }
 
 int	get_max_bits(t_list *a)
@@ -62,25 +65,25 @@ int	is_sorted(t_list *list)
 	return (ret);
 }
 
-t_list	**find_next_min(t_list **list)
+t_list	*find_next_min(t_list **list)
 {
 	int		a;
-	t_list	**tmp;
+	t_list	*tmp;
 	t_list	**min_node;
 
 	a = 2147483647;
-	tmp = list;
-	while (list)
+	tmp = *list;
+	while (*list)
 	{
 		if ((*list)->content < a && (*list)->index == -1)
 			a = (*list)->content;
 		*list = (*list)->next;
 	}
-	list = tmp;
-	while (list)
+	*list = tmp;
+	while (*list)
 	{
 		if ((*list)->content == a)
-			return (list);
+			return (*list);
 		*list = (*list)->next;
 	}
 	return(NULL);
@@ -89,20 +92,20 @@ void	indexer(t_list **list)
 {
 	int		i;
 	t_list 	**head;
-	t_list **x;
+	t_list *x;
 
-	x = list;
-	while (list)
+	x = *list;
+	while (*list)
 	{
 		(*list)->index = -1;
 		*list = (*list)->next;
 	}
-	list = x;
+	*list = x;
 
 	i = 0;
 	head = list;
 	while ((x = find_next_min(list)))
-		(*x)->index = i++;
+		x->index = i++;
 	list = head;
 }
 

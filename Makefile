@@ -1,7 +1,7 @@
 NAME := push_swap
 
 CC = cc
-CFLAGS = 
+CFLAGS = -g
 
 SRC = push_swap.c sorting_utils.c sorting_utils2.c utils.c arg_checks.c
 
