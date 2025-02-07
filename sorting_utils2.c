@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:13:51 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/02 16:14:37 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/06 16:16:10 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	sa(t_list **a)
 	(*a)->next = tmp->next;
 	tmp->next = *a;
 	*a = tmp;
-	ft_printf("%s", "sa");
+	ft_printf("%s\n", "sa");
 }
 
 void	sb(t_list **b)
@@ -32,7 +32,7 @@ void	sb(t_list **b)
 	(*b)->next = tmp->next;
 	tmp->next = *b;
 	*b = tmp;
-	ft_printf("%s", "sb");
+	ft_printf("%s\n", "sb");
 }
 
 void	ss(t_list **a, t_list **b)
@@ -61,6 +61,7 @@ void	ra(t_list **a)
 	head = *a;
 	tmp->next = NULL;
 	ft_lstadd_back(&head, tmp);
+	ft_printf("%s\n", "ra");
 }
 
 void	rb(t_list **b)
@@ -73,4 +74,5 @@ void	rb(t_list **b)
 	head = *b;
 	tmp->next = NULL;
 	ft_lstadd_back(&head, tmp);
+	ft_printf("%s\n", "rb");
 }
