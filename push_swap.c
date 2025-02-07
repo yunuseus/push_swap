@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:58:31 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/07 17:13:11 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/07 17:25:14 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void	indexer(t_list **list)
 	head = list;
 	while ((x = find_next_min(list)))
 		x->index = i++;
-	list = head;
+	*list = head;
 }
 
 void radix(t_list *a, t_list *b)
