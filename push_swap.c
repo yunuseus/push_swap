@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:58:31 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/07 17:26:54 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/07 17:30:04 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,7 @@ void radix(t_list *a, t_list *b)
 		i++;
 	}
 	a = tmp;
-	printf("%d", a->index);
+
 }
 
 int	main(int argc, char ** argv)
