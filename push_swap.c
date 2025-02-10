@@ -6,30 +6,38 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:58:31 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/07 17:30:04 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/08 17:58:04 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	fill_stack(t_list **a, char **argv, int argc)
+#include "libft/libft.h"
+void	fill_stack(t_nodes **a, char **argv, int argc)
 {
-	int	i;
+	int		i;
+	char	**args;
 
-	i = 1;
-	*a = ft_lstnew(ft_atoi(argv[i]));
-	while  (++i < argc)
+	i = 0;
+	if (argc == 2)
+		args = ft_split(argv[1], ' ');
+	else
 	{
-		printf("%d\n", i);
-		ft_lstadd_back(a, ft_lstnew(ft_atoi(argv[i])));
+		args = argv;
+		i++;
 	}
+	*a = ft_lstnew(ft_atoi(args[i++]));
+	while  (args[i])
+		ft_lstadd_back(a, ft_lstnew(ft_atoi(args[i++])));
+	if (argc == 2)
+		free_argv(args);
+
 }
 
-int	get_max_bits(t_list *a)
+int	get_max_bits(t_nodes *a)
 {
 	int	max_bit;
 	int max;
-	t_list	*head;
+	t_nodes	*head;
 
 	head = a;
 	max = head->index;
@@ -45,9 +53,9 @@ int	get_max_bits(t_list *a)
 	return (max_bit);
 }
 
-int	is_sorted(t_list *list)
+int	is_sorted(t_nodes *list)
 {
-	t_list	*tmp;
+	t_nodes	*tmp;
 	int		ret;
 
 	tmp = list;
@@ -65,42 +73,41 @@ int	is_sorted(t_list *list)
 	return (ret);
 }
 
-t_list	*find_next_min(t_list **list)
+t_nodes	*find_next_min(t_nodes **list)
 {
 	int		a;
-	t_list	*tmp;
-	t_list	**min_node;
+	t_nodes	*tmp;
 
 	a = 2147483647;
 	tmp = *list;
-	while (*list)
+	while (tmp)
 	{
-		if ((*list)->content < a && (*list)->index == -1)
-			a = (*list)->content;
-		*list = (*list)->next;
+		if (tmp->content < a && tmp->index == -1)
+			a = tmp->content;
+		tmp = tmp->next;
 	}
-	*list = tmp;
-	while (*list)
+	tmp = *list;
+	while (tmp)
 	{
-		if ((*list)->content == a)
-			return (*list);
-		*list = (*list)->next;
+		if (tmp->content == a)
+			return (tmp);
+		tmp = tmp->next;
 	}
 	return(NULL);
 }
-void	indexer(t_list **list) 
+void	indexer(t_nodes **list) 
 {
 	int		i;
-	t_list 	*head;
-	t_list *x;
+	t_nodes 	*head;
+	t_nodes *x;
 
-	x = *list;
+	head = *list;
 	while (*list)
 	{
 		(*list)->index = -1;
 		*list = (*list)->next;
 	}
-	*list = x;
+	*list = head;
 
 	i = 0;
 	head = *list;
@@ -109,46 +116,47 @@ void	indexer(t_list **list)
 	*list = head;
 }
 
-void radix(t_list *a, t_list *b)
+void radix(t_nodes **a, t_nodes *b)
 {
-	t_list	*tmp;
+	t_nodes	*tmp;
 	int		lstsize;
 	int		i;
 	int		reset;
 	int		max_bit;
 
-	tmp = a;
-	lstsize = ft_lstsize(a);
+	tmp = *a;
+	lstsize = ft_lstsize(*a);
 	i = 0;
-	max_bit = get_max_bits(a);
+	max_bit = get_max_bits(*a);
 	while (i < max_bit)
 	{
 		reset = 0;
 		while (reset++ < lstsize)
 		{
-			tmp = a;
-			if ((a->index >> i) & 1)
-				ra(&a);
+			tmp = *a;
+			if (((*a)->index >> i) & 1)
+				ra(a);
 			else
-				pb(&a, &b);
+				pb(a, &b);
 		}
 		while (ft_lstsize(b) != 0)
-			pa(&a, &b);
+			pa(a, &b);
 		i++;
 	}
-	a = tmp;
-
 }
 
 int	main(int argc, char ** argv)
 {
-	t_list	*a;
-	t_list	*b;
+	t_nodes	*a;
+	t_nodes	*b;
+	a = NULL;
+	b = NULL;
 	int		i;
 	if (argc < 2)
 		return (0);
 	ft_check_av(argc, argv);
 	fill_stack(&a, argv, argc);
 	indexer(&a);
-	radix(a, b);
+	radix(&a, b);
+	ft_lst_free(a);
 }

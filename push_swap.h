@@ -2,24 +2,25 @@
 #include <stdlib.h>
 #include "printf.h"
 
-typedef struct s_list
+typedef struct s_nodes
 {
 	int				content;
 	int				index;
-	struct s_list	*next;
-}	t_list;
+	struct s_nodes	*next;
+}	t_nodes;
 
 int		ft_atoi(const char *str);
-void	ra(t_list **a);
-void	sa(t_list **a);
-void	rr(t_list **a, t_list **b);
-void	rra(t_list **a, int b);
-t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-t_list	*ft_lstnew(int content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
-void	ft_lst_free(t_list *list);
-int		ft_lstsize(t_list *lst);
-void	pb(t_list **a, t_list **b);
-void	pa(t_list **a, t_list **b);
+void	ra(t_nodes **a);
+void	sa(t_nodes **a);
+void	rr(t_nodes **a, t_nodes **b);
+void	rra(t_nodes **a, int b);
+t_nodes	*ft_lstlast(t_nodes *lst);
+void	ft_lstadd_back(t_nodes **lst, t_nodes *new);
+t_nodes	*ft_lstnew(int content);
+void	ft_lstadd_front(t_nodes **lst, t_nodes *new);
+void	ft_lst_free(t_nodes *list);
+int		ft_lstsize(t_nodes *lst);
+void	pb(t_nodes **a, t_nodes **b);
+void	pa(t_nodes **a, t_nodes **b);
 int 	ft_check_av(int argc, char **argv);
+void	free_argv(char **str);

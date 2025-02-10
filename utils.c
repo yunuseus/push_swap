@@ -6,19 +6,19 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:59:46 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/04 15:19:42 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/08 16:47:31 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_lstsize(t_list *lst)
+int	ft_lstsize(t_nodes *lst)
 {
 	int	i;
-	t_list	*tmp;
+	t_nodes	*tmp;
 	tmp = lst;
 	i = 0;
-	while (lst != NULL)
+	while (lst)
 	{
 		i++;
 		lst = lst -> next;
@@ -27,11 +27,11 @@ int	ft_lstsize(t_list *lst)
 	return (i);
 }
 
-void	ft_lst_free(t_list *list)
+void	ft_lst_free(t_nodes *list)
 {
-	t_list	*tmp;
+	t_nodes	*tmp;
 
-	while (list != NULL)
+	while (list)
 	{
 		tmp = list;
 		list = list->next;
@@ -65,7 +65,7 @@ int	ft_atoi(const char *str)
 	return (k * j);
 }
 
-t_list	*ft_lstlast(t_list *lst)
+t_nodes	*ft_lstlast(t_nodes *lst)
 {
 	if (!lst)
 		return (NULL);
@@ -75,9 +75,9 @@ t_list	*ft_lstlast(t_list *lst)
 	}
 	return (lst);
 }
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstadd_back(t_nodes **lst, t_nodes *new)
 {
-	t_list	*tmp;
+	t_nodes	*tmp;
 
 	if (!new)
 		return ;
@@ -89,18 +89,18 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	tmp = ft_lstlast(*lst);
 	tmp -> next = new;
 }
-t_list	*ft_lstnew(int content)
+t_nodes	*ft_lstnew(int content)
 {
-	t_list	*new;
+	t_nodes	*new;
 
-	new = malloc(sizeof(t_list));
+	new = malloc(sizeof(t_nodes));
 	if (!new)
 		return (NULL);
 	new -> content = content;
 	new -> next = NULL;
 	return (new);
 }
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_nodes **lst, t_nodes *new)
 {
 	if (lst && new)
 	{

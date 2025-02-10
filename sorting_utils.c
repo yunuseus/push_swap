@@ -6,19 +6,19 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 16:10:56 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/07 15:18:14 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/08 13:21:57 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "printf/ft_printf.h"
 
-void	rr(t_list **a, t_list **b)
+void	rr(t_nodes **a, t_nodes **b)
 {
-	t_list	*tmp_a;
-	t_list	*head_a;
-	t_list	*tmp_b;
-	t_list	*head_b;
+	t_nodes	*tmp_a;
+	t_nodes	*head_a;
+	t_nodes	*tmp_b;
+	t_nodes	*head_b;
 
 	tmp_a = *a;
 	*a = (*a)->next;
@@ -33,10 +33,10 @@ void	rr(t_list **a, t_list **b)
 	ft_printf("%s\n", "rr");
 }
 
-void	rra(t_list **a, int b)
+void	rra(t_nodes **a, int b)
 {
-	t_list	*last;
-	t_list	*bflast;
+	t_nodes	*last;
+	t_nodes	*bflast;
 
 	last = *a;
 	bflast = NULL;
@@ -53,10 +53,10 @@ void	rra(t_list **a, int b)
 		ft_printf("%s\n", "rra");
 }
 
-void	rrb(t_list **b, int c)
+void	rrb(t_nodes **b, int c)
 {
-	t_list	*last;
-	t_list	*bflast;
+	t_nodes	*last;
+	t_nodes	*bflast;
 
 	last = *b;
 	bflast = NULL;
@@ -73,16 +73,16 @@ void	rrb(t_list **b, int c)
 		ft_printf("%s\n", "rrb");
 }
 
-void	rrr(t_list *a, t_list *b)
+void	rrr(t_nodes *a, t_nodes *b)
 {
 	rra(&a, 0);
 	rrb(&b, 0);
 	ft_printf("%s\n", "rrr");
 }
 
-void	pa(t_list **a, t_list **b)
+void	pa(t_nodes **a, t_nodes **b)
 {
-	t_list	*tmp;
+	t_nodes	*tmp;
 
 	tmp = *b;
 	*b = (*b)->next;
@@ -91,9 +91,9 @@ void	pa(t_list **a, t_list **b)
 	ft_printf("%s\n", "pa");
 }
 
-void	pb(t_list **a, t_list **b)
+void	pb(t_nodes **a, t_nodes **b)
 {
-	t_list	*tmp;
+	t_nodes	*tmp;
 
 	tmp = *a;
 	*a = (*a)->next;
