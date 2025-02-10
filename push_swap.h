@@ -1,6 +1,20 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/10 17:20:30 by yalp              #+#    #+#             */
+/*   Updated: 2025/02/10 17:21:46 by yalp             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+# include <stdio.h>
+# include <stdlib.h>
+# include "printf.h"
 
 typedef struct s_nodes
 {
@@ -24,3 +38,4 @@ void	pb(t_nodes **a, t_nodes **b);
 void	pa(t_nodes **a, t_nodes **b);
 int 	ft_check_av(int argc, char **argv);
 void	free_argv(char **str);
+#endif

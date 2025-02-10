@@ -6,12 +6,13 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:58:31 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/08 17:58:04 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/10 17:19:42 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
+
 void	fill_stack(t_nodes **a, char **argv, int argc)
 {
 	int		i;
@@ -26,17 +27,16 @@ void	fill_stack(t_nodes **a, char **argv, int argc)
 		i++;
 	}
 	*a = ft_lstnew(ft_atoi(args[i++]));
-	while  (args[i])
+	while (args[i])
 		ft_lstadd_back(a, ft_lstnew(ft_atoi(args[i++])));
 	if (argc == 2)
 		free_argv(args);
-
 }
 
 int	get_max_bits(t_nodes *a)
 {
-	int	max_bit;
-	int max;
+	int		max_bit;
+	int		max;
 	t_nodes	*head;
 
 	head = a;
@@ -48,8 +48,8 @@ int	get_max_bits(t_nodes *a)
 			max = head->index;
 		head = head->next;
 	}
-		while ((max >> max_bit) != 0)
-			max_bit++;
+	while ((max >> max_bit) != 0)
+		max_bit++;
 	return (max_bit);
 }
 
@@ -60,7 +60,6 @@ int	is_sorted(t_nodes *list)
 
 	tmp = list;
 	ret = 0;
-
 	while (list->next)
 	{
 		if (list->content > list->next->content)
@@ -75,10 +74,10 @@ int	is_sorted(t_nodes *list)
 
 t_nodes	*find_next_min(t_nodes **list)
 {
-	int		a;
+	long	a;
 	t_nodes	*tmp;
 
-	a = 2147483647;
+	a = 2147483648;
 	tmp = *list;
 	while (tmp)
 	{
@@ -93,13 +92,14 @@ t_nodes	*find_next_min(t_nodes **list)
 			return (tmp);
 		tmp = tmp->next;
 	}
-	return(NULL);
+	return (NULL);
 }
-void	indexer(t_nodes **list) 
+
+void	indexer(t_nodes **list)
 {
 	int		i;
-	t_nodes 	*head;
-	t_nodes *x;
+	t_nodes	*head;
+	t_nodes	*x;
 
 	head = *list;
 	while (*list)
@@ -108,7 +108,6 @@ void	indexer(t_nodes **list)
 		*list = (*list)->next;
 	}
 	*list = head;
-
 	i = 0;
 	head = *list;
 	while ((x = find_next_min(list)))
@@ -116,7 +115,7 @@ void	indexer(t_nodes **list)
 	*list = head;
 }
 
-void radix(t_nodes **a, t_nodes *b)
+void	radix(t_nodes **a, t_nodes *b)
 {
 	t_nodes	*tmp;
 	int		lstsize;
@@ -145,13 +144,14 @@ void radix(t_nodes **a, t_nodes *b)
 	}
 }
 
-int	main(int argc, char ** argv)
+int	main(int argc, char **argv)
 {
 	t_nodes	*a;
 	t_nodes	*b;
+	int		i;
+
 	a = NULL;
 	b = NULL;
-	int		i;
 	if (argc < 2)
 		return (0);
 	ft_check_av(argc, argv);

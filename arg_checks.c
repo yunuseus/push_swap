@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:16:57 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/08 15:01:49 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/10 17:12:57 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ void	free_argv(char **str)
 		free(str[i++]);
 	free(str);
 }
-void put_error(char **args, int argc)
+
+void	put_error(char **args, int argc)
 {
 	if (args && argc == 2)
 		free_argv(args);
@@ -78,7 +79,6 @@ int	ft_is_num(char *nb)
 	return (1);
 }
 
-
 int	ft_is_same(int nb, char **argv, int i)
 {
 	i++;
@@ -91,18 +91,18 @@ int	ft_is_same(int nb, char **argv, int i)
 	return (0);
 }
 
-void 	ft_check_av(int argc, char **argv)
+void	ft_check_av(int argc, char **argv)
 {
 	long long	number;
 	char		**args;
 	int			i;
-	
+
 	i = 0;
 	if (argc == 2)
 		args = ft_split(argv[1], ' ');
 	else
 	{
-		i = 1;;
+		i = 1;
 		args = argv;
 	}
 	while (args[i])

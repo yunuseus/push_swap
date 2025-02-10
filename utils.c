@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:59:46 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/08 16:47:31 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/10 17:17:51 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	ft_lstsize(t_nodes *lst)
 {
-	int	i;
+	int		i;
 	t_nodes	*tmp;
+
 	tmp = lst;
 	i = 0;
 	while (lst)
@@ -37,7 +38,6 @@ void	ft_lst_free(t_nodes *list)
 		list = list->next;
 		free(tmp);
 	}
-
 }
 
 int	ft_atoi(const char *str)
@@ -75,6 +75,7 @@ t_nodes	*ft_lstlast(t_nodes *lst)
 	}
 	return (lst);
 }
+
 void	ft_lstadd_back(t_nodes **lst, t_nodes *new)
 {
 	t_nodes	*tmp;
@@ -89,6 +90,7 @@ void	ft_lstadd_back(t_nodes **lst, t_nodes *new)
 	tmp = ft_lstlast(*lst);
 	tmp -> next = new;
 }
+
 t_nodes	*ft_lstnew(int content)
 {
 	t_nodes	*new;
@@ -100,6 +102,7 @@ t_nodes	*ft_lstnew(int content)
 	new -> next = NULL;
 	return (new);
 }
+
 void	ft_lstadd_front(t_nodes **lst, t_nodes *new)
 {
 	if (lst && new)
