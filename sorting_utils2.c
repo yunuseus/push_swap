@@ -6,11 +6,12 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:13:51 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/10 17:18:10 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/11 16:52:39 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 #include "printf/ft_printf.h"
 
 void	sa(t_nodes **a)

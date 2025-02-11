@@ -6,11 +6,12 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:59:46 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/11 15:08:51 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/11 16:52:46 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdlib.h>
 
 int	ft_lstsize(t_nodes *lst)
 {

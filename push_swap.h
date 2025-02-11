@@ -6,13 +6,13 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 17:20:30 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/11 15:17:48 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/11 16:52:06 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include <stdlib.h>
+
 
 typedef struct s_nodes
 {
