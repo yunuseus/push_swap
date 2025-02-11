@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 16:10:56 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/08 13:21:57 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/11 14:01:18 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	rr(t_nodes **a, t_nodes **b)
 	ft_printf("%s\n", "rr");
 }
 
-void	rra(t_nodes **a, int b)
+void	rra(t_nodes **a)
 {
 	t_nodes	*last;
 	t_nodes	*bflast;
@@ -49,8 +49,7 @@ void	rra(t_nodes **a, int b)
 		bflast->next = NULL;
 	last->next = *a;
 	*a = last;
-	if (b == 1)
-		ft_printf("%s\n", "rra");
+	ft_printf("%s\n", "rra");
 }
 
 void	rrb(t_nodes **b, int c)
@@ -73,12 +72,7 @@ void	rrb(t_nodes **b, int c)
 		ft_printf("%s\n", "rrb");
 }
 
-void	rrr(t_nodes *a, t_nodes *b)
-{
-	rra(&a, 0);
-	rrb(&b, 0);
-	ft_printf("%s\n", "rrr");
-}
+
 
 void	pa(t_nodes **a, t_nodes **b)
 {

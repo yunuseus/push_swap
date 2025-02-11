@@ -3,7 +3,7 @@ NAME := push_swap
 CC = cc
 CFLAGS = -g
 
-SRC = push_swap.c sorting_utils.c sorting_utils2.c utils.c arg_checks.c
+SRC = push_swap.c sorting_utils.c sorting_utils2.c utils.c arg_checks.c extras.c
 
 OBJ = $(SRC:.c=.o)
 
