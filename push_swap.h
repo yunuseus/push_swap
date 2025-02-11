@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 17:20:30 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/11 16:52:06 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/11 17:03:05 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,5 @@ void		free_argv(char **str);
 int			is_sorted(t_nodes *list);
 long long	ft_atol(const char *str);
 int			get_max_bits(t_nodes *a);
+void		end(t_nodes *lst);
 #endif

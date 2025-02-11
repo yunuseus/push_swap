@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:58:31 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/11 16:49:59 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/11 17:02:57 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,8 @@ int	main(int argc, char **argv)
 	fill_stack(&a, argv, argc);
 	i = ft_lstsize(a);
 	indexer(&a);
+	if (is_sorted(a) == 0)
+		end(a);
 	if (i == 2)
 		swap_two(&a);
 	else if (i == 3)
@@ -133,5 +135,5 @@ int	main(int argc, char **argv)
 		swap_five(&a, &b);
 	else
 		radix(&a, b);
-	ft_lst_free(a);
+	end(a);
 }
