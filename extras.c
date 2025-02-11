@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 18:02:02 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/11 14:46:13 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/11 15:05:25 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	swap_three(t_nodes **lst)
 
 void	swap_four(t_nodes **lst, t_nodes **lst_b, int a)
 {
-	int c;
+	int	c;
 
 	c = a;
 	while ((*lst)->index != a)

@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:59:46 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/10 17:17:51 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/11 15:08:51 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,25 +89,4 @@ void	ft_lstadd_back(t_nodes **lst, t_nodes *new)
 	}
 	tmp = ft_lstlast(*lst);
 	tmp -> next = new;
-}
-
-t_nodes	*ft_lstnew(int content)
-{
-	t_nodes	*new;
-
-	new = malloc(sizeof(t_nodes));
-	if (!new)
-		return (NULL);
-	new -> content = content;
-	new -> next = NULL;
-	return (new);
-}
-
-void	ft_lstadd_front(t_nodes **lst, t_nodes *new)
-{
-	if (lst && new)
-	{
-		new -> next = *lst;
-		*lst = new;
-	}
 }

@@ -6,37 +6,13 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:16:57 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/10 17:12:57 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/11 15:14:16 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
-
-long long	ft_atol(const char *str)
-{
-	long long	i;
-	long long	sign;
-	long long	res;
-
-	i = 0;
-	res = 0;
-	sign = 1;
-	while ((str[i] >= '\t' && str[i] <= '\r') || str[i] == 32)
-		i++;
-	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (str[i] >= 48 && str[i] <= 57)
-	{
-		res = (str[i] - '0') + (res * 10);
-		i++;
-	}
-	return (res * sign);
-}
-
+#include "push_swap.h"
+#include <unistd.h>
 void	free_argv(char **str)
 {
 	int	i;
