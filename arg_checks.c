@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:16:57 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/13 15:09:26 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/13 15:15:35 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,19 +32,19 @@ void	put_error(char **args, int argc)
 	exit(-1);
 }
 
-int	ft_is_num(char *nb, char **args)
+int	ft_is_num(char *nb, char **args, int argc)
 {
 	int	i;
 
 	i = 0;
 	if (nb == NULL)
-		put_error(NULL, 0);
+		put_error(NULL, argc);
 	if (count_digit(nb) > 12)
-		put_error(args, 2);
+		put_error(args, argc);
 	if (nb[0] == '\0')
-		put_error(NULL, 0);
+		put_error(NULL, argc);
 	if (nb[0] == ' ')
-		put_error(NULL, 0);
+		put_error(NULL, argc);
 	if (nb[i] == '-' || nb[i] == '+')
 	{
 		i++;
@@ -88,7 +88,7 @@ void	ft_check_av(int argc, char **argv)
 	}
 	while (args[i])
 	{
-		if (!(ft_is_num(args[i], args)))
+		if (!(ft_is_num(args[i], args, argc)))
 			put_error(args, argc);
 		number = ft_atol(args[i]);
 		if (number < -2147483648 || number > 2147483647)
