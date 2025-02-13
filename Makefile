@@ -1,7 +1,7 @@
 NAME := push_swap
 
 CC = cc
-CFLAGS = -g
+CFLAGS = -Wextra -Werror -Wall
 
 SRC = push_swap.c sorting_utils.c end.c utils.c arg_checks.c extras.c too_many_functions.c
 

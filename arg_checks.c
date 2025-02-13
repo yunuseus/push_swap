@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 16:16:57 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/11 15:18:05 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/13 14:53:07 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ int	ft_is_num(char *nb)
 	int	i;
 
 	i = 0;
+	if (nb == NULL)
+		put_error(NULL, 0);
+	if (count_digit(nb) > 12)
+		put_error(NULL, 0);
 	if (nb[0] == '\0')
 		put_error(NULL, 0);
 	if (nb[0] == ' ')

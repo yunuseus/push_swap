@@ -6,7 +6,7 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:58:31 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/11 17:02:57 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/13 14:50:46 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ void	fill_stack(t_nodes **a, char **argv, int argc)
 	{
 		args = argv;
 		i++;
+	}
+	if (!args[i])
+	{
+		free(args);
+		exit(1);
 	}
 	*a = ft_lstnew(ft_atoi(args[i++]));
 	while (args[i])

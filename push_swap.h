@@ -6,13 +6,12 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/10 17:20:30 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/11 17:03:05 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/13 14:52:52 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
 
 typedef struct s_nodes
 {
@@ -44,4 +43,5 @@ int			is_sorted(t_nodes *list);
 long long	ft_atol(const char *str);
 int			get_max_bits(t_nodes *a);
 void		end(t_nodes *lst);
+int			count_digit(char *str);
 #endif
