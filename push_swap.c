@@ -6,12 +6,13 @@
 /*   By: yalp <yalp@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/19 15:58:31 by yalp              #+#    #+#             */
-/*   Updated: 2025/02/13 14:50:46 by yalp             ###   ########.fr       */
+/*   Updated: 2025/02/13 15:42:24 by yalp             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft/libft.h"
+#include <unistd.h>
 
 void	fill_stack(t_nodes **a, char **argv, int argc)
 {
@@ -29,6 +30,7 @@ void	fill_stack(t_nodes **a, char **argv, int argc)
 	if (!args[i])
 	{
 		free(args);
+		write(2, "Error\n", 6);
 		exit(1);
 	}
 	*a = ft_lstnew(ft_atoi(args[i++]));
